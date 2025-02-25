@@ -13,6 +13,8 @@ tailwind.config = {
         'gray-400Custom': '#878EA1',
         'gray-500Custom': '#C0C4CE',
         'gray-600Custom': '#E2E4E9',
+        'black-07': 'rgba(0, 0, 0, 0.7)',
+        'black-08': 'rgba(0, 0, 0, 0.8)',
       },
       fontFamily: {
         'asap': ["Asap", "sans-serif"],
@@ -20,15 +22,14 @@ tailwind.config = {
         'maven': ["Maven Pro", "sans-serif"],
       },
       backgroundImage: {
-        'intro': "url('./src/assets/images/Background_Intro.png')",
-        'contacts': "url('./src/assets/images/Background_Contacts.png')",
+        'intro': "url('/assets/images/Background_Intro.png')",
+        'contacts': "url('/assets/images/Background_Contacts.png')",
       },
       lineHeight: {
         '120': '120%',
         '140': '140%',
       },
       boxShadow: {
-        'redBorderHover': '0px 0px 0px 1.5px #E3646E',
         'blueBorderHover': '0px 0px 0px 1.5px #3996DB',
       },
     }

@@ -1,0 +1,7 @@
+.shadingCards {
+  background: linear-gradient(
+    180deg,
+    rgba(9, 9, 16, 0) 0%,
+    rgba(9, 9, 16, 0.9) 57%
+  );
+}
