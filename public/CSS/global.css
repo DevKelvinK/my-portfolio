@@ -5,3 +5,9 @@
     rgba(9, 9, 16, 0.9) 57%
   );
 }
+
+.activeAnchor {
+  border-bottom: 2px solid #3996DB;
+
+  font-weight: bold;
+}

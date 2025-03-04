@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -18,6 +18,8 @@
 
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Library for Animations -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 
   <link rel="shortcut icon" sizes="32x32" href="/assets/icons/fav.png" type="image/png">
   <title>KK Portfólio</title>
@@ -25,5 +27,7 @@
 
 <body class="bg-gray-200Custom text-gray-500Custom">
   <?php require base_path("/views/{$view}.view.php"); ?>
+
+  <script src="JS/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,10 @@
 tailwind.config = {
   theme: {
+    screens: {
+      'lg': '1110px',
+      'md': '885px',
+      'sm': '580px',
+    },
     extend: {
       colors: {
         'redCustom': '#E3646E',

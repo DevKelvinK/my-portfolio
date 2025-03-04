@@ -7,7 +7,7 @@ $database = new Database(config('database'));
 $projectStacks = explode(', ', $project->stacks);
 ?>
 
-<article class="group relative h-[300px] w-[508px] cursor-pointer outline-none overflow-hidden rounded-xl hover:shadow-blueBorderHover focus-within:shadow-blueBorderHover outline-none duration-[300ms]" tabindex="0">
+<article class="group relative h-[400px] w-full sm:h-[300px] md:h-[500px] md:w-[400px] lg:h-[300px] lg:w-[508px] cursor-pointer outline-none overflow-hidden rounded-xl hover:shadow-blueBorderHover focus-within:shadow-blueBorderHover outline-none duration-[300ms]" tabindex="0">
 
   <!-- Border -->
   <div class="absolute inset-0 z-[2] w-full h-full border border-blueCustom rounded-xl overflow-hidden group-hover:z-[-1]"></div>
@@ -57,12 +57,19 @@ $projectStacks = explode(', ', $project->stacks);
 
 
       <div class="flex gap-4 mb-3 justify-center">
-        <a href="" class="rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">VER PROJETO</a>
-        <a href="" class="rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">REPOSITÓRIO</a>
+        <a href="<?= $project->page ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">
+        <i class="ph ph-globe"></i>
+          WEBSITE
+        </a>
+
+        <a href="<?= $project->repository ?>" target="_blank" rel="noopener noreferrer" class="rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">
+          <i class="ph ph-github-logo"></i>  
+          REPOSITÓRIO
+        </a>
       </div>
     </div>
   </div>
 
   <!-- Image -->
-  <div class="w-full h-full bg-[url('/assets/images/covers/<?= $project->cover ?>')] bg-cover bg-top group-hover:bg-bottom group-focus-within:bg-bottom transition-all duration-[6s]"></div>
+  <div class="w-full h-full bg-[url('/assets/images/covers/<?= $project->cover ?>')] bg-cover bg-top group-focus-within:scale-[1.1] group-hover:scale-[1.1] group-hover:bg-bottom group-focus-within:bg-bottom transition-all duration-[6s]"></div>
 </article>
