@@ -17,10 +17,18 @@ $projectStacks = explode(', ', $project->stacks);
     <div class="absolute inset-0 w-full h-full py-3 px-5 opacity-100 group-hover:opacity-0 group-focus-within:opacity-0 transition-all duration-[700ms]">
       <!-- Infos  -->
       <div class="relative z-[2] flex flex-col justify-between gap-2 h-full justify-between px-1 py-2">
-        <div class="flex gap-2 self-end bg-black-07 py-0.5 px-3 rounded-md font-inconsolata leading-120 font-bold text-xs text-white">
-          <?php foreach ($projectStacks as $projectStack): ?>
-            <img src="/assets/icons/<?= strtolower($projectStack) ?>.svg" alt="icon <?= $projectStack ?>" title="<?= $projectStack ?>" class="w-6">
-          <?php endforeach; ?>
+        <div class="flex justify-between items-center gap-2 mb-2">
+          <?php if ($project->page == ""): ?>  
+            <div class="bg-black-07 py-1 px-3 rounded-md font-inconsolata leading-120 text-[14px] text-white">
+              <h3>EM DESENVOLVIMENTO</h3>
+            </div>
+          <?php endif; ?>
+
+          <div class="flex gap-2 bg-black-07 ml-auto py-0.5 px-3 rounded-md font-inconsolata leading-120 font-bold text-xs text-white">
+            <?php foreach ($projectStacks as $projectStack): ?>
+              <img src="/assets/icons/<?= strtolower($projectStack) ?>.svg" alt="icon <?= $projectStack ?>" title="<?= $projectStack ?>" class="w-6">
+            <?php endforeach; ?>
+          </div>
         </div>
 
         <div>
@@ -43,6 +51,12 @@ $projectStacks = explode(', ', $project->stacks);
         <h3 class="font-asap leading-120 font-bold text-center text-2xl text-white">
           <?= $project->title ?>
         </h3>
+        
+        <?php if ($project->page == ""): ?> 
+          <h4 class="font-asap leading-120 italic text-center text-base text-white -mt-1 mb-2">
+            ( EM DESENVOLVIMENTO )
+          </h4>
+        <?php endif; ?>
 
         <p class="font-maven text-base text-center leading-140 text-white w-[90%]">
           <?= $project->description ?>
@@ -55,12 +69,14 @@ $projectStacks = explode(', ', $project->stacks);
         </div>
       </div>
 
-
+            
       <div class="flex gap-4 mb-3 justify-center">
-        <a href="<?= $project->page ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">
-        <i class="ph ph-globe"></i>
-          WEBSITE
-        </a>
+        <?php if ($project->page != ""): ?>
+          <a href="<?= $project->page ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">
+          <i class="ph ph-globe"></i>
+            WEBSITE
+          </a>
+        <?php endif; ?>
 
         <a href="<?= $project->repository ?>" target="_blank" rel="noopener noreferrer" class="rounded-md bg-blueCustom py-1 px-4 text-white font-maven outline-none hover:bg-white hover:text-blueCustom focus:bg-white focus:text-blueCustom transition-all duration-[500ms]">
           <i class="ph ph-github-logo"></i>  
